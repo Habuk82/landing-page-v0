@@ -20,6 +20,7 @@ import {
   Mic,
   Video,
   FileText,
+  ArrowLeft,
 } from "lucide-react"
 import Link from "next/link"
 import { useState, useEffect } from "react"
@@ -33,6 +34,20 @@ export default function ProfilePage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-400 via-pink-500 to-red-500 relative overflow-hidden">
+      {/* Back to Landing Button */}
+      <div className="absolute top-6 left-6 z-20">
+        <Button
+          asChild
+          variant="ghost"
+          size="sm"
+          className="text-white/80 hover:text-white hover:bg-white/10 p-2 rounded-full transition-all duration-200"
+        >
+          <Link href="/landing">
+            <ArrowLeft className="h-5 w-5" />
+          </Link>
+        </Button>
+      </div>
+
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
