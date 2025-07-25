@@ -44,49 +44,21 @@ export default function LandingPage() {
           <div className="flex items-center justify-between h-16">
             {/* Navigation Links */}
             <div className="flex space-x-8">
-              <Link href="/" className="hover:text-yellow-300 transition-colors font-medium">
+              <Link href="/landing" className="hover:text-yellow-300 transition-colors font-medium">
                 Home
               </Link>
-              <a
-                href="#kontak"
-                className="hover:text-yellow-300 transition-colors cursor-pointer font-medium"
-                onClick={(e) => {
-                  e.preventDefault()
-                  document.getElementById("kontak")?.scrollIntoView({ behavior: "smooth" })
-                }}
-              >
+              <Link href="/kontak" className="hover:text-yellow-300 transition-colors font-medium">
                 Kontak
-              </a>
-              <a
-                href="#pendidikan"
-                className="hover:text-yellow-300 transition-colors cursor-pointer font-medium"
-                onClick={(e) => {
-                  e.preventDefault()
-                  document.getElementById("pendidikan")?.scrollIntoView({ behavior: "smooth" })
-                }}
-              >
+              </Link>
+              <Link href="/pendidikan" className="hover:text-yellow-300 transition-colors font-medium">
                 Pendidikan
-              </a>
-              <a
-                href="#pengalaman"
-                className="hover:text-yellow-300 transition-colors cursor-pointer font-medium"
-                onClick={(e) => {
-                  e.preventDefault()
-                  document.getElementById("pengalaman")?.scrollIntoView({ behavior: "smooth" })
-                }}
-              >
+              </Link>
+              <Link href="/pengalaman" className="hover:text-yellow-300 transition-colors font-medium">
                 Pengalaman
-              </a>
-              <a
-                href="#keahlian"
-                className="hover:text-yellow-300 transition-colors cursor-pointer font-medium"
-                onClick={(e) => {
-                  e.preventDefault()
-                  document.getElementById("keahlian")?.scrollIntoView({ behavior: "smooth" })
-                }}
-              >
+              </Link>
+              <Link href="/keahlian" className="hover:text-yellow-300 transition-colors font-medium">
                 Keahlian
-              </a>
+              </Link>
             </div>
 
             {/* Social Media Icons */}
@@ -188,218 +160,6 @@ export default function LandingPage() {
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Enhanced Additional Sections */}
-      <div className="max-w-6xl mx-auto px-4 pb-16 space-y-20 relative z-10">
-        {/* About Section */}
-        <section id="kontak" className="relative">
-          {/* Decorative background */}
-          <div className="absolute -inset-4 bg-gradient-to-r from-blue-100/50 to-purple-100/50 rounded-3xl blur-sm"></div>
-
-          <div className="relative bg-white/40 backdrop-blur-md rounded-3xl p-10 border border-white/50 shadow-xl">
-            <div className="flex items-center gap-3 mb-8">
-              <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center">
-                <Star className="h-6 w-6 text-white" />
-              </div>
-              <h2 className="text-4xl font-bold text-gray-800">Kontak & Tentang Saya</h2>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-10">
-              <div className="relative">
-                <div className="absolute -top-2 -left-2 w-full h-full bg-blue-200/30 rounded-2xl"></div>
-                <div className="relative bg-white/50 backdrop-blur-sm rounded-2xl p-6 border border-white/60">
-                  <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-2">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                    Profil Singkat
-                  </h3>
-                  <p className="text-gray-700 leading-relaxed">
-                    Saya adalah mahasiswa Teknik Elektro di Universitas Sriwijaya yang memiliki passion dalam bidang
-                    teknologi dan dakwah. Dengan pengalaman sebagai ketua ROHIS dan content creator, saya menggabungkan
-                    kemampuan teknis dengan soft skills yang kuat.
-                  </p>
-                </div>
-              </div>
-
-              <div className="relative">
-                <div className="absolute -top-2 -right-2 w-full h-full bg-purple-200/30 rounded-2xl"></div>
-                <div className="relative bg-white/50 backdrop-blur-sm rounded-2xl p-6 border border-white/60">
-                  <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-2">
-                    <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                    Visi & Misi
-                  </h3>
-                  <p className="text-gray-700 leading-relaxed">
-                    Menjadi profesional muda yang dapat berkontribusi positif bagi masyarakat melalui teknologi dan
-                    dakwah, serta terus mengembangkan diri dalam berbagai bidang ilmu pengetahuan.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Enhanced Quick Stats */}
-        <section className="grid md:grid-cols-4 gap-8">
-          {[
-            {
-              number: "2+",
-              label: "Tahun Pengalaman",
-              color: "from-green-500 to-emerald-500",
-              bg: "from-green-100 to-emerald-100",
-            },
-            {
-              number: "5+",
-              label: "Proyek Selesai",
-              color: "from-blue-500 to-cyan-500",
-              bg: "from-blue-100 to-cyan-100",
-            },
-            {
-              number: "3",
-              label: "Bahasa Dikuasai",
-              color: "from-purple-500 to-pink-500",
-              bg: "from-purple-100 to-pink-100",
-            },
-            {
-              number: "100+",
-              label: "Konten Dibuat",
-              color: "from-red-500 to-orange-500",
-              bg: "from-red-100 to-orange-100",
-            },
-          ].map((stat, index) => (
-            <div key={index} className="relative group">
-              <div
-                className={`absolute -inset-1 bg-gradient-to-r ${stat.color} rounded-2xl blur opacity-25 group-hover:opacity-40 transition-opacity`}
-              ></div>
-              <div
-                className={`relative bg-gradient-to-br ${stat.bg} backdrop-blur-sm rounded-2xl p-8 text-center border border-white/50 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105`}
-              >
-                <div className={`text-4xl font-bold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-3`}>
-                  {stat.number}
-                </div>
-                <div className="text-gray-700 font-semibold">{stat.label}</div>
-              </div>
-            </div>
-          ))}
-        </section>
-
-        {/* Enhanced other sections with similar styling... */}
-        <section id="pendidikan" className="relative">
-          <div className="absolute -inset-4 bg-gradient-to-r from-green-100/50 to-blue-100/50 rounded-3xl blur-sm"></div>
-          <div className="relative bg-white/40 backdrop-blur-md rounded-3xl p-10 border border-white/50 shadow-xl">
-            <div className="flex items-center gap-3 mb-8">
-              <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-blue-500 rounded-2xl flex items-center justify-center">
-                <Sparkles className="h-6 w-6 text-white" />
-              </div>
-              <h2 className="text-4xl font-bold text-gray-800">Pendidikan</h2>
-            </div>
-
-            <div className="space-y-8">
-              {[
-                {
-                  title: "Universitas Sriwijaya",
-                  subtitle: "S1 - Teknik Elektro",
-                  period: "Juli 2023 - Sekarang",
-                  color: "blue",
-                },
-                {
-                  title: "SMA Negeri 3 Prabumulih",
-                  subtitle: "Jurusan IPA",
-                  period: "Juli 2020 - Mei 2023",
-                  color: "green",
-                },
-              ].map((edu, index) => (
-                <div key={index} className="relative group">
-                  <div
-                    className={`absolute -inset-2 bg-${edu.color}-200/30 rounded-2xl group-hover:bg-${edu.color}-200/50 transition-colors`}
-                  ></div>
-                  <div className="relative bg-white/60 backdrop-blur-sm rounded-2xl p-8 border border-white/60 hover:shadow-lg transition-all duration-300">
-                    <div className="flex items-start justify-between">
-                      <div>
-                        <h3 className="text-2xl font-semibold text-gray-800 mb-2">{edu.title}</h3>
-                        <p className="text-gray-700 mb-2 text-lg font-medium">{edu.subtitle}</p>
-                        <p className="text-sm text-gray-600 font-medium">{edu.period}</p>
-                      </div>
-                      <div
-                        className={`w-16 h-16 bg-gradient-to-br from-${edu.color}-400 to-${edu.color}-500 rounded-2xl opacity-20`}
-                      ></div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Continue with similar enhanced styling for other sections... */}
-        <section id="pengalaman" className="relative">
-          <div className="absolute -inset-4 bg-gradient-to-r from-orange-100/50 to-red-100/50 rounded-3xl blur-sm"></div>
-          <div className="relative bg-white/40 backdrop-blur-md rounded-3xl p-10 border border-white/50 shadow-xl">
-            <div className="flex items-center gap-3 mb-8">
-              <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl flex items-center justify-center">
-                <Star className="h-6 w-6 text-white" />
-              </div>
-              <h2 className="text-4xl font-bold text-gray-800">Pengalaman</h2>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              {[
-                {
-                  title: "Video Content Creator",
-                  period: "Juni 2023 - Sekarang",
-                  desc: "Membuat konten kreatif di berbagai platform digital",
-                },
-                {
-                  title: "Khatib Jum'at",
-                  period: "Juni 2023 - Sekarang",
-                  desc: "Dewan Masjid Indonesia Kota Prabumulih",
-                },
-                { title: "Ketua ROHIS", period: "2022 - 2023", desc: "SMA Negeri 3 Prabumulih" },
-                { title: "Document Editing & Printing", period: "Oktober 2024 - Sekarang", desc: "Freelance" },
-              ].map((exp, index) => (
-                <div key={index} className="relative group">
-                  <div className="absolute -inset-2 bg-gradient-to-br from-orange-200/30 to-red-200/30 rounded-2xl group-hover:from-orange-200/50 group-hover:to-red-200/50 transition-colors"></div>
-                  <div className="relative bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-white/60 hover:shadow-lg transition-all duration-300">
-                    <h3 className="text-xl font-semibold text-gray-800 mb-2">{exp.title}</h3>
-                    <p className="text-sm text-gray-600 mb-2 font-medium">{exp.period}</p>
-                    <p className="text-gray-700 text-sm">{exp.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section id="keahlian" className="relative">
-          <div className="absolute -inset-4 bg-gradient-to-r from-purple-100/50 to-pink-100/50 rounded-3xl blur-sm"></div>
-          <div className="relative bg-white/40 backdrop-blur-md rounded-3xl p-10 border border-white/50 shadow-xl">
-            <div className="flex items-center gap-3 mb-8">
-              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center">
-                <Sparkles className="h-6 w-6 text-white" />
-              </div>
-              <h2 className="text-4xl font-bold text-gray-800">Keahlian & Kemampuan</h2>
-            </div>
-
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-              {[
-                "Adaptasi & Komunikasi",
-                "Bahasa Inggris",
-                "Bahasa Arab",
-                "Microsoft Excel",
-                "Microsoft Word",
-                "Olahraga",
-                "Tahfidz",
-                "Kepemimpinan",
-              ].map((skill, index) => (
-                <div key={index} className="relative group">
-                  <div className="absolute -inset-1 bg-gradient-to-r from-purple-400 to-pink-400 rounded-2xl blur opacity-25 group-hover:opacity-40 transition-opacity"></div>
-                  <div className="relative bg-white/60 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/60 hover:shadow-lg transition-all duration-300 hover:scale-105">
-                    <p className="font-semibold text-gray-800 text-sm">{skill}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
       </div>
 
       {/* Enhanced Footer */}
