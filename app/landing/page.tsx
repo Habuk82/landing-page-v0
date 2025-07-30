@@ -59,6 +59,9 @@ export default function LandingPage() {
               <Link href="/keahlian" className="hover:text-yellow-300 transition-colors font-medium">
                 Keahlian
               </Link>
+              <Link href="/projek" className="hover:text-yellow-300 transition-colors font-medium">
+                Projek
+              </Link>
             </div>
 
             {/* Social Media Icons */}
